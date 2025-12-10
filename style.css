@@ -15,7 +15,7 @@ body {
   /* height: 100vh; */
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   /* justify-content: center; */
   /* align-items: center; */
   grid-template-areas:
@@ -73,6 +73,7 @@ aside .respaie form div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 aside .btns {
   display: flex;
@@ -113,14 +114,28 @@ main .sizeForm {
   margin: 10px;
   width: 100%;
   height: 70%;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: linear-gradient(30deg, #eee, red, #eee, rgb(219, 184, 26));
+}
+main .sizeForm h3 {
+  margin-bottom: 30px;
+  text-align: center;
+  /* height: 100%; */
 }
 main .sizeForm form {
   margin-bottom: 20px;
   text-align: center;
-
-  height: 70%;
+  height: 100%;
+}
+main .sizeForm form div {
+  margin: 10px;
+}
+main .sizeForm form div label {
+  width: 150px;
+ 
 }
 button {
   padding: 0px 10px;
@@ -139,7 +154,7 @@ aside input {
 input {
   text-align: center;
   width: 80px;
-  height: 40px;
+  /* height: 40px; */
 }
 footer {
   grid-area: footer;
