@@ -4,126 +4,340 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+     <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   </head>
   <body>
       <div class="container">
-        <div class="header">
-          <div class="container">
-            <div class="hh">Contrôle caissière</div>
-            <div class="imag"><img src="aziza.png" alt=""></div>
+
+        <header>
+            <div >
+              <h3>Contrôle Caissière Aziza</h3>
+              <h5>Fussana 1418</h5>
+            </div>
+            <div><img src="aziza.png" alt=""></div>
+        </header>
+        
+        <aside>
+            <form action="">
+              <div class="caiss">
+                <label for="cais">caiss Maiter</label>
+                <input type="number" name="" id="cais" />
+              </div>
+            </form>
+            <div class="reselt" id="reselt">
+            <form action="">
+              <div>
+                <label for="écar">écare</label>
+                <input type="number" name="" id="écar" />
+              </div>
+              <div>
+                <label for="total">total</label>
+                <input type="number" name="" id="total" />
+              </div>
+            </form>
           </div>
-        </div>
 
           <div class="btns">
-            <button id="btn">calculer</button>
-            <button id="btnD">Anneler</button>
-          </div>
+          <button id="btn">calculer</button>
+          <button id="btnD">Anneler</button>
+        </div> 
 
-          <div class="espes">
-            <!-- <h3>Répartiton des espèces</h3> -->
+          <div class="respaie">
+            <form action="">
+              <div>
+                <label for="totalEspes">Total espèces</label>
+                <input type="number" name="" id="totalEspes" />
+              </div>
+              <div>
+                <label for="totalSodexo">Total sodexo</label>
+                <input type="number" name="" id="totalSodexo" />
+              </div>
+              <div>
+                <label for="totalSodexoCadeau">Total sodexo cadeau</label>
+                <input type="number" name="" id="totalSodexoCadeau" />
+              </div>
+              </form>
+              </div>
+        </aside>
 
-            <p>50 Dinar</p>
-            <input type="number" name="" id="inp50" />
-            <input type="number" name="" id="reslt50" />
-
-            <p>20 Dinar</p>
-            <input type="number" name="" id="inp20" />
-            <input type="number" name="" id="reslt20" />
-
-            <p>10 Dinar</p>
-            <input type="number" name="" id="inp10" />
-            <input type="number" name="" id="reslt10" />
-
-            <p>b 5 Dinar</p>
-            <input type="number" name="" id="inp5" />
-            <input type="number" name="" id="reslt5" />
-            
-            <p>p 5 Dinar</p>
-            <input type="number" name="" id="inpp5" />
-            <input type="number" name="" id="resltp5" />
-            
-            <p>2 Dinar</p>
-            <input type="number" name="" id="inp2" />
-            <input type="number" name="" id="reslt2" />
-            
-            <p>1 Dinar</p>
-            <input type="number" name="" id="inp1" />
-            <input type="number" name="" id="reslt1" />
-            
-            <p>0.5 Dinar</p>
-            <input type="number" name="" id="inp0.5" />
-            <input type="number" name="" id="reslt0.5" />
-            
-            <p>200 Milimes</p>
-            <input type="number" name="" id="inp200" />
-            <input type="number" name="" id="reslt200" />
-            
-            <p>100 Millimes</p>
-            <input type="number" name="" id="inp100" />
-            <input type="number" name="" id="reslt100" />
-            
-            <p> 50 Millimes</p>
-            <input type="number" name="" id="inp50m" />
-            <input type="number" name="" id="reslt50m" />
-      
-          </div>
-
-          <div class="sodexo">
-            <!-- <h3>TR, SODXO</h3> -->
-            
-          <p>TR 4 dt</p>
-          <input type="number" name="" id="TR4" />
-          <input type="number" name="" id="resltTR4" />
+        <main>
+          <nav class="nav" id="nav">
+            <ul>
+              <!-- <i class="bi bi-cash-coin"></i> -->
+              <li><a>Espéces</a></li>
+              <li><a >Sodexo</a></li>
+              <li><a >Sodexo Cadeau</a></li>
+              <li><a >carte Bancaire</a></li>
+              <!-- <i class="bi bi-credit-card"></i> -->
+            </ul>
+          </nav>
+          <div class="sizeForm">
+            <div class="especes active" id="espes">
+              <h3>Répartiton des espèces</h3>
+              <form action="">
+                <div>
+                  <label for="inp50">50 Dinar</label>
+                  <input type="number" name="" id="inp50" />
+                  <label for="reslt50">=</label>
+                  <input type="number" name="" id="reslt50" />
+                </div>
+                <div>
+                  <label for="inp20">20 Dinar</label>
+                  <input type="number" name="" id="inp20" />
+                  <label for="reslt20">=</label>
+                  <input type="number" name="" id="reslt20" />
+                </div>
+                <div>
+                  <label for="inp10">10 Dinar</label>
+                  <input type="number" name="" id="inp10" />
+                  <label for="reslt10">=</label>
+                  <input type="number" name="" id="reslt10" />
+                </div>
+                <div>
+                  <label for="inp5">b 5 Dinar</label>
+                  <input type="number" name="" id="inp5" />
+                  <label for="reslt5">=</label>
+                  <input type="number" name="" id="reslt5" />
+                </div>
+                <div>
+                  <label for="inpp5">p 5 Dinar</label>
+                  <input type="number" name="" id="inpp5" />
+                  <label for="resltp5">=</label>
+                  <input type="number" name="" id="resltp5" />
+                </div>
+                <div>
+                  <label for="inp2">2 Dinar</label>
+                  <input type="number" name="" id="inp2" />
+                  <label for="reslt2">=</label>
+                  <input type="number" name="" id="reslt2" />
+                </div>
+                <div>
+                  <label for="inp1">1 Dinar</label>
+                  <input type="number" name="" id="inp1" />
+                  <label for="reslt1">=</label>
+                  <input type="number" name="" id="reslt1" />
+                </div>
+                <div>
+                  <label for="inp0.5">0.5 Dinar</label>
+                  <input type="number" name="" id="inp0.5" />
+                  <label for="reslt0.5">=</label>
+                  <input type="number" name="" id="reslt0.5" />
+                </div>
+                <div>
+                  <lable for="inp200">200 Milimes</lable>
+                  <input type="number" name="" id="inp200" />
+                  <label for="reslt200">=</label>
+                  <input type="number" name="" id="reslt200" />
+                </div>
+                <div>
+                  <label for="inp100">100 Millimes</label>
+                  <input type="number" name="" id="inp100" />
+                  <label for="reslt100">=</label>
+                  <input type="number" name="" id="reslt100" />
+                </div>
+                <div>
+                  <label for="inp50m"> 50 Millimes</label>
+                  <input type="number" name="" id="inp50m" />
+                  <label for="reslt50m">=</label>
+                  <input type="number" name="" id="reslt50m" />
+                </div>
+              </form>
+            </div>
     
-          <p>TR 5 dt</p>
-          <input type="number" name="" id="TR5" />
-          <input type="number" name="" id="resltTR5" />
-          
-          <p>TR 6 dt</p>
-          <input type="number" name="" id="TR6" />
-          <input type="number" name="" id="resltTR6" />
-          
-          <p>TR 7 dt</p>
-          <input type="number" name="" id="TR7" />
-          <input type="number" name="" id="resltTR7" />
-          
-          <p>TR 8 dt</p>
-          <input type="number" name="" id="TR8" />
-          <input type="number" name="" id="resltTR8" />
+            <div class="sodexo" id="sodexo">
+              <h3>Chèques SODEXO </h3>
+              <form action="">
+                <div>
+                  <label for="TR4">TR 4 dt</label>
+                  <input type="number" name="" id="TR4" />
+                  <label for="resltTR4">=</label>
+                  <input type="number" name="" id="resltTR4" />
+                </div>
+                <div>
+                  <label for="TR5">TR 5 dt</label>
+                  <input type="number" name="" id="TR5" />
+                  <label for="resltTR5">=</label>
+                  <input type="number" name="" id="resltTR5" />
+                </div>
+                <div>
+                  <label for="TR6">TR 6 dt</label>
+                  <input type="number" name="" id="TR6" />
+                  <label for="resltTR6">=</label>
+                  <input type="number" name="" id="resltTR6" />
+                </div>
+                <div>
+                  <label for="TR7">TR 7 dt</lab>
+                  <input type="number" name="" id="TR7" />
+                  <label for="resltTR7">=</label>
+                  <input type="number" name="" id="resltTR7" />
+                </div>
+                <div>
+                  <label for="TR8">TR 8 dt</label>
+                  <input type="number" name="" id="TR8" />
+                  <label for="resltTR8">=</label>
+                  <input type="number" name="" id="resltTR8" />
+                </div>
+                <div>
+                  <label for="TR9">TR 9 dt</label>
+                  <input type="number" name="" id="TR9" />
+                  <label for="resltTR9">=</label>
+                  <input type="number" name="" id="resltTR9" />
+                </div>
+                <div>
+                  <label for="TR10">TR 10 dt</label>
+                  <input type="number" name="" id="TR10" />
+                  <label for="resltTR10">=</label>
+                  <input type="number" name="" id="resltTR10" />
+                </div>
+                <div>
+                  <label for="TR50">TR 50 dt</label>
+                  <input type="number" name="" id="TR50" />
+                  <label for="resltTR50">=</label>
+                  <input type="number" name="" id="resltTR50" />
+                </div>
+                <div>
+                  <label for="TR100">TR 100 dt</label>
+                  <input type="number" name="" id="TR100" />
+                  <label for="resltTR100">=</label>
+                  <input type="number" name="" id="resltTR100" />
+                </div>
+              </form>
+            </div>
     
-          <p>TR 9 dt</p>
-          <input type="number" name="" id="TR9" />
-          <input type="number" name="" id="resltTR9" />
-          
-          <p>TR 10 dt</p>
-          <input type="number" name="" id="TR10" />
-          <input type="number" name="" id="resltTR10" />
+            <div class="sodexoCadeau" id="sodexoCadeau">
+              <h3>Chèques SODEXO Cadeaux</h3>
+              <form action="">
+                <div>
+                  <label for="sodexo4">Cadeau 4 dt</label>
+                  <input type="number" name="" id="sodexo4" />
+                  <label for="resltsodexo4">=</label>
+                  <input type="number" name="" id="resltsodexo4" />
+                </div>
+                <div>
+                  <label for="sodexo5">Cadeau 5 dt</label>
+                  <input type="number" name="" id="sodexo5" />
+                  <label for="resltsodexo5">=</label>
+                  <input type="number" name="" id="resltsodexo5" />
+                </div>
+                <div>
+                  <label for="sodexo6">Cadeau 6 dt</label>
+                  <input type="number" name="" id="sodexo6" />
+                  <label for="resltsodexo6">=</label>
+                  <input type="number" name="" id="resltsodexo6" />
+                </div>
+                <div>
+                  <label for="sodexo7">Cadeau 7 dt</label>
+                  <input type="number" name="" id="sodexo7" />
+                  <label for="resltsodexo7">=</label>
+                  <input type="number" name="" id="resltsodexo7" />
+                </div>
+                <div>
+                  <label for="sodexo8">Cadeau 8 dt</label>
+                  <input type="number" name="" id="sodexo8" />
+                  <label for="resltsodexo8">=</label>
+                  <input type="number" name="" id="resltsodexo8" />
+                </div>
+                <div>
+                  <label for="sodexo9">Cadeau 9 dt</label>
+                  <input type="number" name="" id="sodexo9" />
+                  <label for="resltsodexo9">=</label>
+                  <input type="number" name="" id="resltsodexo9" />
+                </div>
+                <div>
+                  <label for="sodexo10">Cadeau 10 dt</label>
+                  <input type="number" name="" id="sodexo10" />
+                  <label for="resltsodexo10">=</label>
+                  <input type="number" name="" id="resltsodexo10" />
+                </div>
+                <div>
+                  <label for="sodexo50">Cadeau 50 dt</label>
+                  <input type="number" name="" id="sodexo50" />
+                  <label for="resltsodexo50">=</label>
+                  <input type="number" name="" id="resltsodexo50" />
+                </div>
+                <div>
+                  <label for="sodexo100">Cadeau 100 dt</label>
+                  <input type="number" name="" id="sodexo100" />
+                  <label for="resltsodexo100">=</label>
+                  <input type="number" name="" id="resltsodexo100" />
+                </div>
+              </form>
+            </div>
 
-          <p>TR 50 dt</p>
-          <input type="number" name="" id="TR50" />
-          <input type="number" name="" id="resltTR50" />
-        
-          <p>TR 100 dt</p>
-          <input type="number" name="" id="TR100" />
-          <input type="number" name="" id="resltTR100" />
-
-          </div>
-          
-          <div class="caiss">
-            <label for="">caiss</label>
-            <input type="number" name="" id="cais" />
-          </div>
-
-          <div class="reselt" id="reselt">
-            <div class="cont2">
-              <label for="">écare</label>
-              <input type="number" name="" id="écar" />
-    
-              <label for="">total</label>
-              <input type="number" name="" id="total" />
+            <div class="carteBancaire">
+              <h3>Carte Bancaire</h3>
+              <form action="">
+                <div>
+                  <label for="carteBancaire">Total Carte Bancaire</label>
+                  <input type="number" name="" id="carteBancaire" />
+                </div>
+              </form>
             </div>
           </div>
+
+        </main>
+
+        <footer>
+          <div>
+            <div id="contact" class="contact-card">
+            <h3>Contact</h3>
+            <p>
+              Email: <span id="email">Bettaibichokrino001@gmail.com</span>
+            </p>
+            <p>Téléphone: +216 98 104 699</p>
+            <div class="socials">
+              <a
+                class="social-btn fb"
+                href="https://www.facebook.com/cbettaibi"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <!-- Facebook SVG -->
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.444 2.888h-2.329v6.99C18.343 21.128 22 16.991 22 12z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a
+                class="social-btn wa"
+                href="https://wa.me/21622949285"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+              >
+                <!-- WhatsApp SVG -->
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.52 3.48A11.86 11.86 0 0 0 12 .5C6  .5 1.1 5.4 1.1 11.4c0 2.02.53 3.94 1.54 5.66L.5 23.5l6.8-1.77A11.86 11.86 0 0 0 12 22.3c6 0 10.9-4.9 10.9-10.9 0-2.92-1.14-5.64-3.38-7.92zM12 20c-1.6 0-3.16-.42-4.5-1.2l-.32-.19-4.04 1.05 1.08-3.93-.21-.34A8.02 8.02 0 0 1 4 11.4c0-4.42 3.58-8 8-8s8 3.58 8 8-3.6 8-8 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+          </div>
+        </footer>
           
       </div>
 

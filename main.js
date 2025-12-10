@@ -1,3 +1,4 @@
+// input espces
 let inp50 = document.getElementById("inp50");
 let inp20 = document.getElementById("inp20");
 let inp10 = document.getElementById("inp10");
@@ -9,18 +10,20 @@ let inp05 = document.getElementById("inp0.5");
 let inp200 = document.getElementById("inp200");
 let inp100 = document.getElementById("inp100");
 let inp50m = document.getElementById("inp50m");
-let TR4 = document.getElementById("TR4")
-let TR5 = document.getElementById("TR5")
-let TR6 = document.getElementById("TR6")
-let TR7 = document.getElementById("TR7")
-let TR8 = document.getElementById("TR8")
-let TR9 = document.getElementById("TR9")
-let TR10 = document.getElementById("TR10")
-let TR50 = document.getElementById("TR50")
-let TR100 = document.getElementById("TR100")
+
+// input TR
+let TR4 = document.getElementById("TR4");
+let TR5 = document.getElementById("TR5");
+let TR6 = document.getElementById("TR6");
+let TR7 = document.getElementById("TR7");
+let TR8 = document.getElementById("TR8");
+let TR9 = document.getElementById("TR9");
+let TR10 = document.getElementById("TR10");
+let TR50 = document.getElementById("TR50");
+let TR100 = document.getElementById("TR100");
 
 let reselt = document.getElementById("reselt")
-
+// result espces
 let reslt50 = document.getElementById("reslt50");
 let reslt20 = document.getElementById("reslt20");
 let reslt10 = document.getElementById("reslt10");
@@ -42,10 +45,34 @@ let resltTR10 = document.getElementById("resltTR10")
 let resltTR50 = document.getElementById("resltTR50")
 let resltTR100 = document.getElementById("resltTR100")
 
+let sodexo4 = document.getElementById("sodexo4")
+let sodexo5 = document.getElementById("sodexo5")
+let sodexo6 = document.getElementById("sodexo6")
+let sodexo7 = document.getElementById("sodexo7")
+let sodexo8 = document.getElementById("sodexo8")
+let sodexo9 = document.getElementById("sodexo9")
+let sodexo10 = document.getElementById("sodexo10")
+let sodexo50 = document.getElementById("sodexo50")
+let sodexo100 = document.getElementById("sodexo100")
+
+let resltSodexo4 = document.getElementById("resltsodexo4")
+let resltSodexo5 = document.getElementById("resltsodexo5")
+let resltSodexo6 = document.getElementById("resltsodexo6")
+let resltSodexo7 = document.getElementById("resltsodexo7")
+let resltSodexo8 = document.getElementById("resltsodexo8")
+let resltSodexo9 = document.getElementById("resltsodexo9")
+let resltSodexo10 = document.getElementById("resltsodexo10")
+let resltSodexo50 = document.getElementById("resltsodexo50")
+let resltSodexo100 = document.getElementById("resltsodexo100")
+
+let carteBancaire = document.getElementById("carteBancaire");
 let total = document.getElementById("total");
 let cais = document.getElementById("cais");
 let écare = document.getElementById("écar");
 
+let totalEspes = document.getElementById("totalEspes");
+let totalSodexo = document.getElementById("totalSodexo");
+let totalSodexoCadeau = document.getElementById("totalSodexoCadeau");
 
 let btn = document.getElementById("btn");
 
@@ -54,18 +81,6 @@ let btn = document.getElementById("btn");
 // console.log(JSON.stringify(sp50.value))
 
 btn.onclick = function () {
-    // écare.style.color = "red";
-    // écare.style.fontWeight = "bold";
-    // écare.style.cssText = "font-weight: bold; color: green; opacity: 0.9";
-    // écare.style.removeProperty("color");
-    // écare.style.setProperty("font-size", "40px", "important");
-
-    // console.log(document.styleSheets);
-    // console.log(document.styleSheets[0].rules[0].style.removeProperty("line-height"));
-    // console.log(document.styleSheets[0].rules[0].style.setProperty("background-color", "red"));
-
-    // écare.style.setProperty("display", "block")
-
 
     reslt50.value = inp50.value * 50;
     reslt20.value = inp20.value * 20;
@@ -89,15 +104,45 @@ btn.onclick = function () {
     resltTR50.value = (TR50.value - TR50.value * 0.1) * 50;
     resltTR100.value = (TR100.value - TR100.value * 0.1) * 100;
 
+    resltSodexo4.value = sodexo4.value * 4;
+    resltSodexo6.value = sodexo6.value * 6;
+    resltSodexo5.value = sodexo5.value * 5;
+    resltSodexo7.value = sodexo7.value * 7;
+    resltSodexo8.value = sodexo8.value * 8;
+    resltSodexo9.value = sodexo9.value * 9;
+    resltSodexo10.value = sodexo10.value * 10;
+    resltSodexo50.value = sodexo50.value * 50;
+    resltSodexo100.value = sodexo100.value * 100;
+
+
     total.value = +reslt10.value + +reslt20.value +
      +reslt50.value + +reslt5.value + +resltp5.value + 
      +reslt2.value + +reslt1.value + +reslt05.value + 
      +reslt200.value + +reslt100.value + +reslt50m.value + 
     +resltTR4.value + +resltTR5.value + 
-    +resltTR6.value + +resltTR7.value ;
-    écare.value = +total.value - +cais.value - 200;
-    // sp50.value = sp50.value;
+    +resltTR6.value + +resltTR7.value + +resltSodexo4.value + +resltSodexo5.value +
+    +resltSodexo6.value + +resltSodexo7.value + +resltSodexo8.value +
+    +resltSodexo9.value + +resltSodexo10.value + +resltSodexo50.value +
+    +resltSodexo100.value + +carteBancaire.value;
 
+    écare.value = +total.value - +cais.value - 200;
+    
+    totalEspes.value = +reslt50.value + +reslt20.value +
+     +reslt10.value + +reslt5.value + +resltp5.value + 
+     +reslt2.value + +reslt1.value + +reslt05.value + 
+     +reslt200.value + +reslt100.value + +reslt50m.value;
+
+     totalSodexo.value = +resltTR4.value + +resltTR5.value +
+     +resltTR6.value + +resltTR7.value + +resltTR8.value +
+     +resltTR9.value + +resltTR10.value + +resltTR50.value +
+     +resltTR100.value;
+
+     totalSodexoCadeau.value = +resltSodexo4.value + +resltSodexo5.value +
+     +resltSodexo6.value + +resltSodexo7.value + +resltSodexo8.value +
+     +resltSodexo9.value + +resltSodexo10.value + +resltSodexo50.value +
+     +resltSodexo100.value;
+
+    reselt.style.display = "block";
     if (écare.value <= 0){
         reselt.style.background = "red";
     } else {
@@ -148,6 +193,28 @@ btn2.onclick = function (){
     inp200.value = '';
     inp100.value = '';
     inp50m.value = '';
+
+    sodexo4.value = '';
+    sodexo5.value = '';
+    sodexo6.value = '';
+    sodexo7.value = '';
+    sodexo8.value = '';
+    sodexo9.value = '';
+    sodexo10.value = '';
+    sodexo50.value = '';
+    sodexo100.value = '';
+
+    carteBancaire.value = '';
+    resltSodexo4.value = '';
+    resltSodexo5.value = '';
+    resltSodexo6.value = '';
+    resltSodexo7.value = '';
+    resltSodexo8.value = '';
+    resltSodexo9.value = '';
+    resltSodexo10.value = '';
+    resltSodexo50.value = '';
+    resltSodexo100.value = '';
+
     TR4.value = '';
     TR5.value = '';
     TR6.value = '';
@@ -157,5 +224,22 @@ btn2.onclick = function (){
     TR10.value = '';
     TR50.value = '';
     TR100.value = '';
+
+    reselt.style.background = "#eee";
+    reselt.style.color = "black";
   };
+  
+let lists = document.querySelectorAll(".nav ul li");
+let listContent = document.querySelectorAll("main .sizeForm > div");
+
+
+lists.forEach((li, index) => {
+    li.addEventListener("click", () => {
+        lists.forEach((li) => li.classList.remove("active"));
+        li.classList.add("active");
+
+        listContent.forEach((content) => content.classList.remove("active"));
+        listContent[index].classList.add("active");
+    });
+});
 
