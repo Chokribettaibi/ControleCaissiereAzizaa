@@ -39,7 +39,6 @@ function calculerSommeEspeces() {
   + +billet20Dinars.value * 20
   + +billet50Dinars.value * 50
   + +billet100Dinars.value * 100;
-  console.log("Total Espèces: " + somme + " DT");
   document.getElementById("especes").value = somme;
   return somme;
 };
@@ -71,8 +70,9 @@ function calculerSommeKDO() {
   return somme;
 }
 // Calculer Ecart
-let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;
+// let Ecar = 0;
 
+// let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;
 // bouton clear inputs
 let clearBtn = document.getElementById("clear-btn");
 clearBtn.onclick = function () {
@@ -83,6 +83,8 @@ clearBtn.onclick = function () {
   // document.getElementById("TR").value = "";
 }
 let footerNote = document.getElementById("footer-note");
+okCaisse.onclick = function () {
+let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;
 
 if (Ecar > 0) {
   // Bouton OK Caisse
@@ -96,17 +98,13 @@ if (Ecar > 0) {
           // background: "#7ccd7c",
           confirmButtonText: "OK",
           confirmButtonColor: "#228b22",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
         });
-  };
-
-} else if (Ecar < 0) {
-  // Bouton OK Caisse
-  okCaisse.onclick = function () {
-    Swal.fire({
+      };
+      
+    } else if (Ecar < 0) {
+      // Bouton OK Caisse
+      okCaisse.onclick = function () {
+        Swal.fire({
           title: "Votre écart est inferieur à",
           color: "red",
           // background: "#ff69b4",
@@ -114,26 +112,20 @@ if (Ecar > 0) {
           icon: "error",
           confirmButtonText: "OK",
           confirmButtonColor: "red",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
-        });;
-  };
-} else {
-  // Bouton OK Caisse
-  okCaisse.onclick = function () {
-    Swal.fire({
+        });
+      };
+    } else {
+      // Bouton OK Caisse
+      okCaisse.onclick = function () {
+        Swal.fire({
           title: "Votre écart est nul",
           color: "blue",
           text: `${Ecar} DT`,
           icon: "info",
           confirmButtonText: "OK",
           confirmButtonColor: "blue",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
-        });;
-  };
-}
+        })
+      };
+    }
+    
+  }
