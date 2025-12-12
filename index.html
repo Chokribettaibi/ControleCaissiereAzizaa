@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contrôle Caissière</title>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="sweetalert2.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,120 +21,301 @@
       </header>
 
       <main class="content">
-        <section class="left-section">
+        <form class="left-section" id="formEspeces">
           <h2>Répartion des espèces</h2>
 
           <div class="form-group">
             <label>Pièce 5 Millimes :</label>
-            <input type="number" id="piece5Millimes"value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece5Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 10 Millimes :</label>
-            <input type="number" id="piece10Millimes" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece10Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 20 Millimes :</label>
-            <input type="number" id="piece20Millimes" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece20Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 50 Millimes :</label>
-            <input type="number" id="piece50Millimes" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece50Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 100 Millimes :</label>
-            <input type="number" id="piece100Millimes" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece100Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 200 Millimes :</label>
-            <input type="number" id="piece200Millimes" value="O" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece200Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 0.5 Dinar :</label>
-            <input type="number" id="piece500Millimes" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece500Millimes"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 1 Dinar :</label>
-            <input type="number" id="piece1Dinar" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece1Dinar"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 2 Dinars :</label>
-            <input type="number" id="piece2Dinars" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece2Dinars"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Pièce 5 Dinar :</label>
-            <input type="number" id="piece5Dinars" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="piece5Dinars"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Billet 5 Dinars :</label>
-            <input type="number" id="billet5Dinars" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="billet5Dinars"
+              placeholder="0"
+            />
           </div>
           <div class="form-group">
             <label>Billet 10 Dinars :</label>
-            <input type="number" id="billet10Dinars" value="0" />
+            <input
+              type="number"
+              class="inpEspeces"
+              id="billet10Dinars"
+              placeholder="0"
+            />
           </div>
-        </section>
-        <section class="right-section">
+          <div class="form-group">
+            <label>Billet 20 Dinars :</label>
+            <input
+              type="number"
+              class="inpEspeces"
+              id="billet20Dinars"
+              placeholder="0"
+            />
+          </div>
+          <div class="form-group">
+            <label>Billet 50 Dinars :</label>
+            <input
+              type="number"
+              class="inpEspeces"
+              id="billet50Dinars"
+              placeholder="0"
+            />
+          </div>
+          <div class="form-group">
+            <label>Billet 100 Dinars :</label>
+            <input
+              type="number"
+              class="inpEspeces"
+              id="billet100Dinars"
+              placeholder="0"
+            />
+          </div>
+          <div class="form-group">
+            <label>.</label>
+            <label>.</label>
+          </div>
+          <div class="form-group">
+            <label>.</label>
+            <label>.</label>
+          </div>
+          <div class="form-group caisseMaitre">
+            <label>Caisse Maitre :</label>
+            <input
+              type="number"
+              class="inpEspeces"
+              id="caisseMaitre"
+              placeholder="0"
+            />
+          </div>
+        </form>
+        <form class="right-section" id="formTiroir">
           <h2>Contenu du tiroir</h2>
           <div class="form-group">
             <label>Espèces :</label>
-            <input type="text" id="especes" value="0.000" />
+            <input type="number" id="especes" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Chéque :</label>
-            <input type="number" id="cheque" value="0.000" />
+            <input type="number" id="cheque" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Carte Bancaire :</label>
-            <input type="number" id="carteBancaire" value="0.000" />
+            <input type="number" id="carteBancaire" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>BAD :</label>
-            <input type="number" id="bad" value="0.000" />
+            <input type="number" id="bad" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>carte sodexo+Pluxee :</label>
-            <input type="number" id="carteSodexo" value="0.000" />
+            <input type="number" id="carteSodexo" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Vouchers Aziza :</label>
-            <input type="number" id="vouchersAziza" value="0.000" />
+            <input type="number" id="vouchersAziza" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Cheque Cadeau Aziza :</label>
-            <input type="number" id="chequeCadeauAziza" value="0.000" />
+            <input type="number" id="chequeCadeauAziza" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Bons D'Achat Aziza N :</label>
-            <input type="number" id="bonsDAchatAziza" value="0.000" />
+            <input type="number" id="bonsDAchatAziza" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Reception Lait :</label>
-            <input type="number" id="receptionLait" value="0.000" />
+            <input type="number" id="receptionLait" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>AZIZA PAY :</label>
-            <input type="number" id="azizaPay" value="0.000" />
+            <input type="number" id="azizaPay" placeholder="0.000" />
           </div>
           <div class="form-group">
             <label>Servimax TR :</label>
-            <input type="number" id="servimaxTR" value="0.000" />
+            <input
+              type="number"
+              id="servimaxTR"
+              class="TR"
+              placeholder="0.000"
+            />
           </div>
           <div class="form-group">
             <label>Servimax KDO :</label>
-            <input type="number" id="servimaxKDO" value="0.000" />
+            <input
+              type="number"
+              id="servimaxKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
           </div>
-        </section>
+          <div class="form-group">
+            <label>First TR :</label>
+            <input type="number" id="firstTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
+            <label>first KDO :</label>
+            <input
+              type="number"
+              id="firstKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
+          </div>
+          <div class="form-group">
+            <label>Sodexo TR :</label>
+            <input type="number" id="sodexoTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
+            <label>Sodexo KDO :</label>
+            <input
+              type="number"
+              id="sodexoKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
+          </div>
+          <div class="form-group">
+            <label>Joker TR :</label>
+            <input type="number" id="jokerTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
+            <label>Joker KDO :</label>
+            <input
+              type="number"
+              id="jokerKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
+          </div>
+          <div class="form-group">
+            <label>Bonus TR :</label>
+            <input type="number" id="bonusTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
+            <label>Bonus KDO :</label>
+            <input
+              type="number"
+              id="bonusKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
+          </div>
+          <div class="form-group">
+            <label>NBonus TR :</label>
+            <input type="number" id="nBonusTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
+            <label>NBonus KDO :</label>
+            <input
+              type="number"
+              id="nBonusKDO"
+              class="KDO"
+              placeholder="0.000"
+            />
+          </div>
+        </form>
       </main>
 
       <footer class="footer">
-        <p class="footer-note">
+        <p class="footer-note" id="footer-note">
           Le montant saisi en espèces doit représenter la totalité du tiroir
           caisse
         </p>
         <div class="buttons">
-          <button class="btn btn-primary">Modification</button>
+          <button class="btn btn-primary" id="actualiser-btn" onclick="location.reload()">
+            Actualiser
+          </button>
           <button class="btn btn-success" id="okCaisse">OK caisse</button>
-          <button class="btn btn-danger">Annuler</button>
+          <button class="btn btn-danger" id="clear-btn">Annuler</button>
         </div>
       </footer>
     </div>
