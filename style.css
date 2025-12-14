@@ -92,6 +92,10 @@ body {
   gap: 15px;
   align-items: center;
 }
+.form-group:hover,
+.form-group:focus {
+  background-color: #f0f1ff;
+}
 
 .form-group label {
   font-size: 14px;
@@ -121,6 +125,11 @@ body {
   border-color: #4682b4;
   box-shadow: 0 0 5px rgba(70, 130, 180, 0.3);
   background-color: #f0f1ff;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
 }
 
 .highlight-input {
