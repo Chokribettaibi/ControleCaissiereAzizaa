@@ -21,6 +21,9 @@ let billet100Dinars = document.getElementById("billet100Dinars");
 let carteBancaireInput = document.getElementById("carteBancaire");
 // Input Caisse Maitre
 let caisseMaitreInput = document.getElementById("caisseMaitre");
+// Footer Note
+let footerNote = document.getElementById("footer-note");
+console.log(footerNote.innerText);
 // Calculer SommeEspeces
 function calculerSommeEspeces() {
   let somme = 0;
@@ -45,6 +48,7 @@ function calculerSommeEspeces() {
 // Écouter les changements dans les inputs espèces
 document.querySelectorAll(".inpEspeces").forEach(input => {
   input.addEventListener("input", calculerSommeEspeces); // "input" = en temps réel
+  // footerNote.innerText = "Modification: TAB permet d'accéder au prochain nombre de pièces ou billets.";
 });
 // Somme TR
 function calculerSommeTR() {
@@ -55,7 +59,6 @@ function calculerSommeTR() {
     somme += +input.value;
   });
   sommeTR += somme - (somme * 0.1);
-  console.log("Total TR: " + sommeTR + " DT");
   // document.getElementById("TR").value = somme;
   return sommeTR;
 }
@@ -65,12 +68,9 @@ function calculerSommeKDO() {
   document.querySelectorAll(".KDO").forEach(input => {
     somme += +input.value;
   });
-  console.log("Total KDO: " + somme + " DT");
-  // document.getElementById("KDO").value = somme;
   return somme;
 }
 // Calculer Ecart
-// let Ecar = 0;
 
 // let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;
 // bouton clear inputs
@@ -79,53 +79,86 @@ clearBtn.onclick = function () {
   document.querySelectorAll("input").forEach(input => {
     input.value = "";
   });
-  // document.getElementById("especes").value = "";
-  // document.getElementById("TR").value = "";
 }
-let footerNote = document.getElementById("footer-note");
-okCaisse.onclick = function () {
-let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;
 
-if (Ecar > 0) {
-  // Bouton OK Caisse
-  okCaisse.onclick = function () {
+// let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;;
+
+okCaisse.onclick = function () {
+  // Calculer l'écart au moment du clic (assure la valeur à jour)
+  const Ecar = calculerSommeEspeces()
+    + calculerSommeTR()
+    + calculerSommeKDO()
+    + Number(carteBancaireInput.value || 0)
+    - Number(caisseMaitreInput.value || 0)
+    - 200;
+
+  if (Ecar > 0) {
     Swal.fire({
-          title: "Votre écart est Supérieur à",
-          color: "green",
-          html: `<p style="font-size: 40px; color: #228b22;">+${Ecar} DT</p>`,
-          icon: "success",
-          iconColor: "#228b22",
-          // background: "#7ccd7c",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#228b22",
-        });
-      };
-      
-    } else if (Ecar < 0) {
-      // Bouton OK Caisse
-      okCaisse.onclick = function () {
-        Swal.fire({
-          title: "Votre écart est inferieur à",
-          color: "red",
-          // background: "#ff69b4",
-          html: `<p style="font-size: 40px; color: red;">${Ecar} DT</p>`,
-          icon: "error",
-          confirmButtonText: "OK",
-          confirmButtonColor: "red",
-        });
-      };
-    } else {
-      // Bouton OK Caisse
-      okCaisse.onclick = function () {
-        Swal.fire({
-          title: "Votre écart est nul",
-          color: "blue",
-          text: `${Ecar} DT`,
-          icon: "info",
-          confirmButtonText: "OK",
-          confirmButtonColor: "blue",
-        })
-      };
-    }
-    
+      title: "Votre écart est Supérieur à",
+      color: "green",
+      html: `<p style="font-size: 40px; color: #228b22;">+${Ecar.toFixed(3)} DT</p>`,
+      icon: "success",
+      iconColor: "#228b22",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#228b22",
+    });
+
+  } else if (Ecar < 0) {
+    Swal.fire({
+      title: "Votre écart est inferieur à",
+      color: "red",
+      html: `<p style="font-size: 40px; color: red;">${Ecar.toFixed(3)} DT</p>`,
+      icon: "error",
+      confirmButtonText: "OK",
+      confirmButtonColor: "red",
+    });
+
+  } else {
+    Swal.fire({
+      title: "Votre écart est nul",
+      color: "blue",
+      text: `${Ecar.toFixed(3)} DT`,
+      icon: "info",
+      confirmButtonText: "OK",
+      confirmButtonColor: "blue",
+    });
   }
+};
+  // Footer Note
+  let inputTR = document.querySelectorAll(".TR");
+  let inputKDO = document.querySelectorAll(".KDO");
+  let inputTotal = document.getElementById("especes");
+  let inputEspeces = document.querySelectorAll(".inpEspeces");
+  inputTR.forEach(input => {
+    input.addEventListener("focus", () => {
+      footerNote.innerText = "Modification! Sodexo TR: en Dinar";
+      calculerSommeEspeces();
+      calculerSommeTR();
+      calculerSommeKDO();
+    });
+  });
+  inputKDO.forEach(input => {
+    input.addEventListener("focus", () => {
+      footerNote.innerText = "Modification! Sodexo KDO: en Dinar";
+      calculerSommeEspeces();
+      calculerSommeTR();
+      calculerSommeKDO();
+    });
+  });
+  inputEspeces.forEach(input => {
+    input.addEventListener("focus", () => {
+      footerNote.innerText = "Modification! TAB permet d'accéder au prochain nombre de pièces ou billets.";
+      calculerSommeEspeces();
+      calculerSommeTR();
+      calculerSommeKDO();
+    });
+  });
+  inputTotal.addEventListener("focus", () => {
+    footerNote.innerText = "Le montant saisi en espèces doit représenter la totalité du tiroircaisse";
+      calculerSommeEspeces();
+      calculerSommeTR();
+      calculerSommeKDO();
+  });
+  caisseMaitreInput.addEventListener("focus", () => {
+    footerNote.innerText = "Aller à Caiss Maîter, Analyse par caissière, saisie Montant CA Net";
+  });
