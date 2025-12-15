@@ -20,7 +20,40 @@ body {
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   min-height: 100vh;
+  position: relative;
 }
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-image: conic-gradient( from var(--angle),    red,blue,red,blue, red );
+  z-index: -1;
+  animation: spin 5s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+}
+.container::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+        from {
+          --angle: 0deg;
+        }
+        to {
+          --angle: 360deg;
+        }
+      }
 
 /* HEADER */
 .header {
@@ -553,3 +586,4 @@ body {
     min-width: 40px;
   }
 }
+
