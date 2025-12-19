@@ -74,6 +74,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow: scroll;
+  height: 500px;
 }
 
 .left-section h2,
