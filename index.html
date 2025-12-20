@@ -25,6 +25,7 @@
   </head>
   <body>
     <div class="container">
+      <img class="logo p-2" src="aziza.png" alt="Logo Aziza">
       <header class="header">
         <div class="header-left">
           <p class="header-title">
@@ -183,11 +184,11 @@
             <label>.</label>
             <label>.</label>
           </div>
-          <div class="form-group caisseMaitre">
-            <label>Caisse Maitre :</label>
+          <div class="form-group caisseMaitre text-danger">
+            <label class="text-danger">Caisse Maitre :</label>
             <input
               type="number"
-              class="inpEspeces"
+              class="inpEspeces text-danger form-control"
               id="caisseMaitre"
               placeholder="0"
             />
@@ -319,6 +320,10 @@
             />
           </div>
           <div class="form-group">
+            <label>Premium TR :</label>
+            <input type="number" id="premiumTR" class="TR" placeholder="0.000" />
+          </div>
+          <div class="form-group">
             <label for="baa">BAA :</label>
             <input type="number" name="baa" id="baa" placeholder="0.000" />
           </div>
@@ -330,8 +335,9 @@
           Modification! TAB permet d'accéder au prochain nombre de pièces ou
           billets.
         </p>
+
         <div class="buttons">
-          <button class="btn btn-outline-danger" id="okCaisse">
+          <button class="btn btn-outline-danger okCaisse" id="okCaisse">
             <!-- Confimer l'écart -->
             <i class="bi bi-check-circle-fill"></i>
             OK
@@ -350,7 +356,10 @@
             Up
           </div>
         </div>
+        <p class="footer-note p-2 text-danger">AZIZA Foussana 1418</p>
+        
       </footer>
+      
     </div>
     
     <script

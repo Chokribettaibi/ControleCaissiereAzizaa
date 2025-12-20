@@ -121,7 +121,12 @@ okCaisse.onclick = function () {
       icon: "info",
       confirmButtonText: "OK",
       confirmButtonColor: "blue",
+      animation: true,
     });
+    Swal.bindClickHandler();
+Swal.mixin({
+  toast: true
+}).bindClickHandler("okCaisse");
   }
 };
   // Footer Note
@@ -132,6 +137,7 @@ okCaisse.onclick = function () {
   inputTR.forEach(input => {
     input.addEventListener("focus", () => {
       footerNote.innerText = "Modification! Sodexo TR: en Dinar";
+      footerNote.style.color = "#666";
       calculerSommeEspeces();
       calculerSommeTR();
       calculerSommeKDO();
@@ -140,6 +146,7 @@ okCaisse.onclick = function () {
   inputKDO.forEach(input => {
     input.addEventListener("focus", () => {
       footerNote.innerText = "Modification! Sodexo KDO: en Dinar";
+      footerNote.style.color = "#666";
       calculerSommeEspeces();
       calculerSommeTR();
       calculerSommeKDO();
@@ -148,6 +155,7 @@ okCaisse.onclick = function () {
   inputEspeces.forEach(input => {
     input.addEventListener("focus", () => {
       footerNote.innerText = "Modification! TAB permet d'accéder au prochain nombre de pièces ou billets.";
+      footerNote.style.color = "#666";
       calculerSommeEspeces();
       calculerSommeTR();
       calculerSommeKDO();
@@ -155,12 +163,14 @@ okCaisse.onclick = function () {
   });
   inputTotal.addEventListener("focus", () => {
     footerNote.innerText = "Le montant saisi en espèces doit représenter la totalité du tiroircaisse";
+    footerNote.style.color = "#666";
       calculerSommeEspeces();
       calculerSommeTR();
       calculerSommeKDO();
   });
   caisseMaitreInput.addEventListener("focus", () => {
     footerNote.innerText = "Aller à Caiss Maîter, Analyse par caissière, saisie Montant CA Net";
+    footerNote.style.color = "#dc3545";
   });
 
 // Scroll Buttons

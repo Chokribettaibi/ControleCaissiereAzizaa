@@ -8,6 +8,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   padding: 20px;
+  
   /* position: relative; */
 }
 
@@ -144,6 +145,7 @@ body {
   background-color: #e8e8e8;
   padding: 20px 40px;
   border-top: 1px solid #ccc;
+  text-align: center;
 }
 
 .footer-note {
@@ -160,14 +162,18 @@ body {
 }
 
 .btn {
-  /* padding: 10px 30px; */
-  font-size: 14px;
+  /*padding: 10px 30px;
+  */font-size: 14px;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid;
+  border: 1px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .btn-primary {
