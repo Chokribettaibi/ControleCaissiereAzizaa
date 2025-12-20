@@ -162,3 +162,29 @@ okCaisse.onclick = function () {
   caisseMaitreInput.addEventListener("focus", () => {
     footerNote.innerText = "Aller à Caiss Maîter, Analyse par caissière, saisie Montant CA Net";
   });
+
+// Scroll Buttons
+let scrollDownBtn = document.getElementById("scroll-down");
+let scrollUpBtn = document.getElementById("scroll-up");
+
+scrollDownBtn.onclick = function () {
+  formEspeces.scrollBy({
+    top: 100,
+    behavior: 'smooth'
+  });
+  formTiroir.scrollBy({
+    top: 100,
+    behavior: 'smooth'
+  });
+};
+
+scrollUpBtn.onclick = function () {
+  formEspeces.scrollBy({
+    top: -100,
+    behavior: 'smooth'
+  });
+  formTiroir.scrollBy({
+    top: -100,
+    behavior: 'smooth'
+  });
+}

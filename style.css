@@ -74,7 +74,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  overflow: scroll;
+  overflow-y: scroll;
   height: 500px;
 }
 
@@ -167,6 +167,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 2px solid;
 }
 
 .btn-primary {
@@ -559,12 +560,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .conContainer {
   margin: 10px;
   padding: 10px;
-  width: 200px;
+  width: 100%;
   height: 50px;
   position: relative;
   background: white;
@@ -619,3 +621,23 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* 
+<div class="contact position-absolute top-100 start-50 translate-middle">
+      <div class="conContainer h-25">
+        
+        <p class="text-center name">Bettaibi Chokri</p>
+        <!-- <h6 class="text-center fs-6">Contacter :</h6> -->
+        <div class="media-icons">
+          <ul class="d-flex justify-content-center gap-4 list-unstyled">
+            <li class="d-flex"><a href=""><i class="bi bi-facebook text-primarry"></i></a></li>
+            <li class="d-flex " ><a href=""><i class="bi bi-whatsapp text-success"></i></a></li>
+            <li class="d-flex"><a href=""><i class="bi bi-github text-dark"></i></a></li>
+          </ul>
+          <classPs="text-center" class="email text-center">
+            <!-- <p>Email: bettaibichokri001@gmail.com</p> -->
+            <!-- <p><i class="bi bi-telephone-fill"></i>: +216 98 104 699</p> -->
+        </div>
+      </div>
+    </div>
+*/
