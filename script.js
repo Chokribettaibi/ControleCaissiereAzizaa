@@ -79,6 +79,7 @@ clearBtn.onclick = function () {
   document.querySelectorAll("input").forEach(input => {
     input.value = "";
   });
+  // window.location.reload();
 }
 
 // let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;;
@@ -94,10 +95,17 @@ okCaisse.onclick = function () {
 
   if (Ecar > 0) {
     Swal.fire({
-      title: "Votre écart est Supérieur à",
+      // title: "Votre écart est Supérieur à",
       color: "green",
-      html: `<p style="font-size: 40px; color: #228b22;">+${Ecar.toFixed(3)} DT</p>`,
-      icon: "success",
+      html: `
+      <i class="bi bi-emoji-smile" style="font-size: 50px;"></i>
+      <br/>
+      <p style="color: #228b22;">
+      Votre écart est Supérieur à:</p>
+      <br/>
+      <p style="font-size: 40px;">+${Ecar.toFixed(3)} DT</p>
+      `,
+      // icon: "success",
       iconColor: "#228b22",
       confirmButtonText: "OK",
       confirmButtonColor: "#228b22",
@@ -105,20 +113,30 @@ okCaisse.onclick = function () {
 
   } else if (Ecar < 0) {
     Swal.fire({
-      title: "Votre écart est inferieur à",
       color: "red",
-      html: `<p style="font-size: 40px; color: red;">${Ecar.toFixed(3)} DT</p>`,
-      icon: "error",
+      html: `
+      <i class="bi bi-emoji-frown" style="font-size: 50px;"></i>
+      <br/>
+      <p style="color: red;">
+      Votre écart est inferieur à:</p>
+      <br/>
+      <p style="font-size: 40px;">${Ecar.toFixed(3)} DT</p>
+      `,
       confirmButtonText: "OK",
       confirmButtonColor: "red",
     });
 
   } else {
     Swal.fire({
-      title: "Votre écart est nul",
       color: "blue",
-      text: `${Ecar.toFixed(3)} DT`,
-      icon: "info",
+      html: `
+      <i class="bi bi-emoji-neutral" style="font-size: 50px;"></i>
+      <br/>
+      <p style="color: blue;">
+      Votre écart est nul:</p>
+      <br/>
+      <p style="font-size: 40px;">${Ecar.toFixed(3)} DT</p>
+      `,
       confirmButtonText: "OK",
       confirmButtonColor: "blue",
       animation: true,
@@ -198,3 +216,17 @@ scrollUpBtn.onclick = function () {
     behavior: 'smooth'
   });
 }
+
+document.querySelectorAll('input').forEach(inp => {
+  inp.addEventListener('input', () => {
+
+    const label = inp.previousElementSibling; // label قبل input
+
+    if (label && label.tagName === 'LABEL') {
+      label.style.color = (inp.value != 0 && inp.value !== "")
+        ? 'blue'
+        : '';
+    }
+    inp.classList.toggle('blue-border', inp.value != 0 && inp.value !== "");
+  });
+});
