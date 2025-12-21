@@ -79,7 +79,7 @@ clearBtn.onclick = function () {
   document.querySelectorAll("input").forEach(input => {
     input.value = "";
   });
-  // window.location.reload();
+  window.location.reload();
 }
 
 // let Ecar = calculerSommeEspeces() + calculerSommeTR() + calculerSommeKDO() + +carteBancaireInput.value - +caisseMaitre.value - 200;;
