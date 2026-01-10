@@ -23,7 +23,9 @@ let carteBancaireInput = document.getElementById("carteBancaire");
 let caisseMaitreInput = document.getElementById("caisseMaitre");
 // Footer Note
 let footerNote = document.getElementById("footer-note");
-console.log(footerNote.innerText);
+
+let audio = document.getElementById("audio")
+let audio2 = document.getElementById("audio2")
 // Calculer SommeEspeces
 function calculerSommeEspeces() {
   let somme = 0;
@@ -110,6 +112,8 @@ okCaisse.onclick = function () {
       confirmButtonText: "OK",
       confirmButtonColor: "#228b22",
     });
+      audio.currentTime = 0;
+      audio.play();
 
   } else if (Ecar < 0) {
     Swal.fire({
@@ -125,6 +129,8 @@ okCaisse.onclick = function () {
       confirmButtonText: "OK",
       confirmButtonColor: "red",
     });
+      audio2.currentTime = 0;
+      audio2.play();
 
   } else {
     Swal.fire({

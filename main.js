@@ -76,7 +76,8 @@ let totalSodexoCadeau = document.getElementById("totalSodexoCadeau");
 
 let btn = document.getElementById("btn");
 
-
+let audio = document.getElementById("audio")
+let audio2 = document.getElementById("audio2")
 
 // console.log(JSON.stringify(sp50.value))
 
